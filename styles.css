@@ -22,8 +22,7 @@ body {
     margin: 0 auto;*/
 
     /*Grid lines*/
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, minmax(150px, auto));
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     max-width: 960px;
     margin: 0 auto;
@@ -39,18 +38,27 @@ body {
     background: #666;
 }
 
-.one {
-    /*grid-column-start: 1;
-    grid-column-end: 3;*/
+.nested {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    grid-column: span 2;
+}
+
+.nested p {
+    padding: 20px;
+    margin:0;
+}
+.nested p:nth-child(even) {
+    background-color: yellowgreen;
+}
+.nested p:nth-child(odd){
+    background-color: brown;
+}
+/* .nested p:nth-child(1){
     grid-column: 1/3;
-    grid-row: 1/6;
+    grid-row:  1/3;
 }
-.two {
-    grid-column: 3/7;
-}
-.three {
-    grid-column: 1/4;
-}
-.four {
-    grid-row: 2/4;
-}
+.nested p:nth-child(2){
+    grid-column: 3/5;
+} */
